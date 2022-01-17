@@ -3,6 +3,7 @@
     <#if section = "header">
         ${msg("loginAccountTitle")}
     <#elseif section = "form">
+<!--
         <div id="kc-form">
             <div id="kc-form-wrapper">
                 <#if realm.password>
@@ -59,7 +60,7 @@
                     </form>
                 </#if>
         </div>
-
+-->
             <#if realm.password && social.providers??>
                 <div id="kc-social-providers" class="${properties.kcFormSocialAccountSectionClass!}">
                     <hr/>
