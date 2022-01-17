@@ -65,8 +65,7 @@
         <#if realm.password && social.providers??>
             <div id="kc-social-providers" class="${properties.kcFormSocialAccountSectionClass!}">
                 <hr/>
-                <#if realm.password && realm.name == "master">
-                <#else>
+                <#if realm.name != "master">
                 <h4>${msg("identity-provider-login-label")}</h4>
                 </#if>
                 <ul class="${properties.kcFormSocialAccountListClass!} <#if social.providers?size gt 3>${properties.kcFormSocialAccountListGridClass!}</#if>">
