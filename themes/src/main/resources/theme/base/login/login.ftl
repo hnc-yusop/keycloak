@@ -5,7 +5,7 @@
     <#elseif section = "form">
     <div id="kc-form">
       <div id="kc-form-wrapper">
-        <#if realm.password && realm.name == "master">
+        <#if realm.password && realm.name = "master">
             <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="${url.loginAction}" method="post">
                 <div class="${properties.kcFormGroupClass!}">
                     <label for="username" class="${properties.kcLabelClass!}"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
@@ -64,8 +64,9 @@
         </div>
         <#if realm.password && social.providers??>
             <div id="kc-social-providers" class="${properties.kcFormSocialAccountSectionClass!}">
+                <#if realm.password && realm.name = "master">
+                <#else>
                 <hr/>
-                <#if realm.name != "master">
                 <h4>${msg("identity-provider-login-label")}</h4>
                 </#if>
                 <ul class="${properties.kcFormSocialAccountListClass!} <#if social.providers?size gt 3>${properties.kcFormSocialAccountListGridClass!}</#if>">
