@@ -4,6 +4,7 @@
         ${msg("loginAccountTitle")}
     <#elseif section = "form">
     <div id="kc-form">
+<!--
       <div id="kc-form-wrapper">
         <#if realm.password>
             <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="${url.loginAction}" method="post">
@@ -62,7 +63,7 @@
             </form>
         </#if>
         </div>
-
+-->
         <#if realm.password && social.providers??>
             <div id="kc-social-providers" class="${properties.kcFormSocialAccountSectionClass!}">
                 <hr/>
