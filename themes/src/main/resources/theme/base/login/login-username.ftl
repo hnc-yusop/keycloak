@@ -5,7 +5,7 @@
     <#elseif section = "form">
         <div id="kc-form">
             <div id="kc-form-wrapper">
-                <#if !realm.password>
+                <#if realm.password>
                     <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="${url.loginAction}"
                           method="post">
                         <div class="${properties.kcFormGroupClass!}">
